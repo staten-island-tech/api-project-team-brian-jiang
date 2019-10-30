@@ -1,3 +1,5 @@
+function ini (){
+    fetch('https://api-v3.igdb.com/').then(result => { 
 
-
-export const test = console.log('hello world again');
+    }).then(data => );
+}
