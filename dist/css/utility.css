@@ -1,6 +1,14 @@
 .flex_col{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+}
+
+.flex_row{
+    display: flex;
+    flex-direction: row;
+}
+
+.ctxt{
+    text-align: center;
 }

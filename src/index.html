@@ -8,16 +8,24 @@
     <title>%TITLE%</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container flex_col">
         <div class="header">%HEADER%</div>
+        <div class="form flex_row">
+            <input id="user_input" type="text" value="%User Input%">
+            <input id="submit" type="button" value="%SUBMIT BUTTON%">
+        </div>
         <div class="trivia">
             <div class="trivia_scoreboard">This is where the scoreboard will appear</div>
-            <div class="trivia_question">This is where the answer will appear</div>
-            <div class="trivia_answers flex_col">
-                <div class="trivia_answer_choice">This is where a choice will appear</div>
-                <div class="trivia_answer_choice">This is where a choice will appear</div>
-                <div class="trivia_answer_choice">This is where a choice will appear</div>
-                <div class="trivia_answer_choice">This is where a choice will appear</div>
+            <div class="trivia_question">This is where the question will appear</div>
+            <div class="trivia_answers">
+                <div class="flex_row">
+                    <div class="trivia_answer_choice">This is where a choice will appear</div>
+                    <div class="trivia_answer_choice">This is where a choice will appear</div>
+                </div>
+                <div class="flex_row">
+                    <div class="trivia_answer_choice">This is where a choice will appear</div>
+                    <div class="trivia_answer_choice">This is where a choice will appear</div>
+                </div>
             </div>
         </div>
     </div>
