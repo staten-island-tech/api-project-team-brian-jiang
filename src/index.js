@@ -1,2 +1,2 @@
-import {getUserInput} from './src/input.js'
+import {getUserInput} from './input'
 getUserInput();

@@ -1,6 +1,6 @@
 export function getUserInput(){
-    document.getElementById('user_submit').addEventListener('click', () => {
-        const userInput = document.getElementById('user_input');
+    document.getElementById('submit').addEventListener('click', () => {
+        const userInput = document.getElementById('user_input').value;
         console.log (userInput);
     })
 }
