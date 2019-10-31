@@ -7,3 +7,17 @@ body{
     width: 70vw;
     background-color:rgba(0,0,0, .5);
 }
+
+.trivia_row{
+    width: 50vw;
+    justify-content: space-between;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
+.trivia_answer_choice{
+    width: 20vw;
+    height: 5vh;
+    background-color: red;
+    text-align: center;
+}
