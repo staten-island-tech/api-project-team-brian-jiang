@@ -1,5 +1,12 @@
-function ini (){
-    fetch('https://api-v3.igdb.com/').then(result => { 
 
-    }).then(data => );
+async function game_data(url = 'https://api-v3.igdb.com', endpoints = {}){
+    const request = await fetch(url){
+        method: 'POST',
+        headers: {
+
+        },
+
+    });
+    return await Response.json();
 }
+
