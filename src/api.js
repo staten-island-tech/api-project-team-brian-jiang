@@ -1,12 +1,17 @@
+axios({
+    url: 'https://api-v3.igdb.com/cover',
+    method:'GET',
+    headers: {
+        'Accept': 'application/json',
+        'user-key': API_KEY
+    },
+    data: "fields alpha_channel,animated,game,height,image_id,url,width;"
+})
+.then((response) => {
+    console.log(response.data);
+})
+.catch(err => {
+    console.error(err);
+});
 
-async function game_data(url = 'https://api-v3.igdb.com', endpoints = {}){
-    const request = await fetch(url){
-        method: 'POST',
-        headers: {
-
-        },
-
-    });
-    return await Response.json();
-}
 
