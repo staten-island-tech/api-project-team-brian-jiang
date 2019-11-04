@@ -1,5 +1,6 @@
 import {getUserInput} from './input'
 getUserInput();
 
-import {test} from './server'
-test();
+import {giantBombInit} from './fetch'
+giantBombInit();
+//will is gay
