@@ -1,10 +1,16 @@
-  /* Load the HTTP library */
-  const http = require("http");
-
-  /* Create an HTTP server to handle responses */
-
-  http.createServer(function(request, response) {
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello World");
-    response.end();
-  }).listen(8888);
+async function test(){
+const data = await fetch("https://api-v3.igdb.com/games",{
+  method: 'POST',
+  headers: {
+      'Accept': 'application/json',
+      'user-key': '42e763c170268439c45ee99f42691e54'
+  },
+  data: "alternative_names"
+})
+  .then(response => {
+      console.log(response.data);
+  })
+  .catch(err => {
+      console.error(err);
+  });
+}
