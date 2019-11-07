@@ -11,7 +11,7 @@ export function giantBombInit(){
       game = await game.json();
       console.log(game);
     }catch(err){
-      console.log(err)
+      console.log(err);
     }
   })
 }
