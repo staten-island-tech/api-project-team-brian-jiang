@@ -1,5 +1,7 @@
-import {getUserInput} from './input'
-getUserInput();
-
+//import {getUserInput} from './input'
+import {clickListener} from './clickListener'
 import {giantBombInit} from './fetch'
-giantBombInit('Rainbow Six');
+
+//getUserInput();
+
+clickListener('#submit', (giantBombInit(document.getElementById('user_input').value)))
