@@ -4,4 +4,4 @@ import {giantBombInit} from './fetch'
 
 //getUserInput();
 
-clickListener('#submit', (giantBombInit(document.getElementById('user_input').value)))
+clickListener('#submit', giantBombInit());
