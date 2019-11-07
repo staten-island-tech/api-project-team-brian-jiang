@@ -1,5 +1,3 @@
-//import { format } from "path";
-
 export function giantBombInit(){
   document.getElementById('submit').addEventListener('click', async function(e){
     e.preventDefault();
@@ -15,5 +13,3 @@ export function giantBombInit(){
     }
   })
 }
-
-//https://www.giantbomb.com/api/character/1/?api_key=9d667b02088703888d8e5b8b79705908424b1a0b
