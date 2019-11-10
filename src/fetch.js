@@ -1,5 +1,7 @@
 //import { format } from "path";
-
+import {qList} from './questions';
+import {answerSwitch} from './switch';
+import {randomizer} from './rand';
 export function giantBombInit(){
   document.getElementById('submit').addEventListener('click', async function(e){
     e.preventDefault();
@@ -9,7 +11,8 @@ export function giantBombInit(){
       //console.log(result);
       let game = await fetch(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/game/${result.results[0].id}/?api_key=ba31dd109b521b66607178ada5c6b8f4fc13ca0b&format=json`);
       game = await game.json();
-      //console.log(game);
+      console.log(game);
+      answerSwitch(randomizer(qList)[1], game.results);
     }catch(err){
       console.log(err);
     }
