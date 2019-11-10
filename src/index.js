@@ -1,11 +1,10 @@
-import {giantBombInit} from './fetch';
-import { clickListener } from './clickListener';
-import { qList } from './questions';
-import { answerSwitch } from './switch';
-import { randomizer } from './rand';
+import {giantBombInit} from './fetch'; //API call; Status: Complete
+import {clickListener} from './clickListener'; //Check for User input; Status Complete
+import {qList} from './questions'; //Question Template; Status: Complete
+import {randomizer} from './rand'; //Question Randomizer; Status: Complete
+import {answerSwitch} from './switch'; //Answer Generation; Status: Incomplete
 
 giantBombInit();
-
 let userInput; //remove later
 
 clickListener('#submit', async () => {
