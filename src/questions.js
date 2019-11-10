@@ -12,7 +12,7 @@ let QuestionList = {
     q4: new Question('Which of these is a character from %game%?', 'character'),
     q5: new Question('Does %game% have DLC content?', 'dlc'),
     q6: new Question('Where does %game% take place?', 'setting'),
-    q7: new Question('What is the name of this character?', 'characterImg')
+    //q7: new Question('What is the name of this character?', 'characterImg')
 };
 
 export let qList = Object.values(QuestionList);

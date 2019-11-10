@@ -10,11 +10,14 @@ export function answerSwitch(q, data){
             break;
         case 'studio':
             console.log(q.type);
+            answerGenerator('company', 18789, data.developers);
             break;
         case 'platform':
             console.log(q.type);
+            answerGenerator('platform', 163, data.platforms);
             break;
         case 'character':
+            answerGenerator('character', 39297, data.characters);
             console.log(q.type);
             break;
         case 'dlc':
@@ -22,7 +25,7 @@ export function answerSwitch(q, data){
                 break;
         case 'setting':
                 console.log(q.type);
-                answerGenerator('location', 100);
+                answerGenerator('location', 5376, data.locations);
                 break;
         case 'characterImg':
                 console.log(q.type);
