@@ -26,7 +26,7 @@ let randomizer = (questions) => {  //Fisher-Yates setup
 
 //Generate answers 
 function YesOrNo(){
-    if(el){
+    if(){
         /*Checks if its a yes or no question and it will generate 2 buttons*/
         
         const yesbtn = document.createElement("button");

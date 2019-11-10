@@ -1,5 +1,3 @@
-
-
 class Question{
     constructor(text, type){
         this.text = text;
@@ -17,4 +15,34 @@ export let QuestionList = {
         q7: new Question('What is the name of this character?', 'characterName')
 }
 
-export let qList = Object.values(QuestionList);
+export function randomizer(){ //Fisher Yates Setup; Status: Success
+    let qList = Object.values(QuestionList);
+    for (let i = qList.length - 1; i > 0; i--){
+        const newPos = Math.floor(Math.random() * (i + 1));
+        let temp = qList[i];
+        qList[i] = qList[newPos];
+        qList[newPos] = temp;
+    }
+    return console.log(qList); 
+}
+
+function Assigner (){
+    switch(qList){
+        case "qList":
+
+        case "":
+
+        case "":
+        
+        case "":
+        
+        case "":
+        
+        case "":
+        
+        case "":
+
+    }
+}
+
+

@@ -2,5 +2,5 @@ import {giantBombInit} from './fetch';
 
 giantBombInit();
 
-import {qList} from './questions';
-console.log(qList);
+import {randomizer} from './questions';
+randomizer();
