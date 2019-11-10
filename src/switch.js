@@ -1,3 +1,5 @@
+import {answerGenerator} from './answerGenerator';
+
 export function answerSwitch(q, data){
     let display = document.querySelector('.trivia_question');
     let question = q.text.replace('%game%', data.name)
@@ -20,6 +22,7 @@ export function answerSwitch(q, data){
                 break;
         case 'setting':
                 console.log(q.type);
+                answerGenerator('location', 100);
                 break;
         case 'characterImg':
                 console.log(q.type);
