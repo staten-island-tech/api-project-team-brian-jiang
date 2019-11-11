@@ -7,6 +7,8 @@ import { answerCheck } from './answerCheck';
 
 giantBombInit();
 let userInput; //remove later
+let score = 0;
+let highscore = 0;
 
 clickListener('#submit', async (e) => {
     let game = await giantBombInit();
@@ -15,6 +17,17 @@ clickListener('#submit', async (e) => {
 })
 
 clickListener('.trivia_answer_choice', (e) => {
-    answerSwitch(randomizer(qInit(userInput))[1], userInput);
-    answerCheck(e.target.innerHTML, userInput);
+    answerSwitch(randomizer(qList)[1], userInput);
+    if (answerCheck(e.target.innerHTML, userInput) == true){
+        alert('Correct.');
+        score = score + 1;
+    } else{
+        alert('Incorrect');
+        if (score > highscore){
+            alert(`New High Score: ${score}`);
+            highscore = score;
+        }
+        score = 0;
+    }
+    document.querySelector('.trivia_scoreboard').innerHTML = score;
 });
