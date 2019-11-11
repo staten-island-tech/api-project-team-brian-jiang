@@ -4,7 +4,6 @@ export async function answerGenerator(qType, maxCount, data){
     async function generator(){
         let game = await fetch(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/${qType}/${Math.floor(Math.random() * maxCount-1)}/?api_key=ba31dd109b521b66607178ada5c6b8f4fc13ca0b&field_list=name&format=json`);
         game = await game.json();
-        console.log(game);
         if(game.status_code != 1){
             return await generator();
         }else{
