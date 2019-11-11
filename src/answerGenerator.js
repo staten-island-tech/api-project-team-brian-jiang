@@ -15,7 +15,9 @@ export async function answerGenerator(qType, maxCount, data){
     let aArray = [a1, a2, a3, a4];
     //console.log(aArray);
     aArray = randomizer(aArray);
+    //console.log(aArray);
     Array.from(document.querySelectorAll('.trivia_answer_choice')).map(function(el, i){
         el.innerHTML = aArray[i]
     })
+    console.log(a1); // the right answer is perserved as a1 and we can return this value to index and check against user value. 
 }
