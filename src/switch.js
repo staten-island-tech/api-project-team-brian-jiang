@@ -18,6 +18,10 @@ export function answerSwitch(q, data){
             console.log(q.type);
             answerGenerator('character', 39297, data.characters);
             break;
+        case 'setting':
+            console.log(q.type);
+            answerGenerator('location', 5376, data.locations);
+            break;
         default:
             console.log('Defaulting, check inputs.');
     }

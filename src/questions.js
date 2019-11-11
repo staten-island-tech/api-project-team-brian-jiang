@@ -5,11 +5,11 @@ class Question{
     }
 };
 
-let QuestionList = {
-    q1: new Question('Which studio created %game%?', 'studio'), //Valid
-    q2: new Question('Which platform is %game% available on?', 'platform'), //Valid
-    q3: new Question('Which of these is a character from %game%?', 'character'), //Valid
-    //q5: new Question('What is the name of this character?', 'characterImg')
+export function qInit(data){
+    let QuestionList = []
+    if(data.developers != null){QuestionList.push(new Question('Which studio created %game%?', 'studio'))}; //Valid
+    if(data.platforms != null){QuestionList.push(new Question('Which platform is %game% available on?', 'platform'))}; //Valid
+    if(data.characters != null){QuestionList.push(new Question('Which of these is a character from %game%?', 'character'))}; //Valid
+    if(data.locations != null){QuestionList.push(new Question('Where does %game% take place?', 'setting'))};
+    return QuestionList;
 };
-
-export let qList = Object.values(QuestionList);
