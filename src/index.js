@@ -12,9 +12,13 @@ function triviaInit(){
     let highscore = 0;
 
     clickListener('#submit', async (e) => {
-        let game = await giantBombInit();
-        answerSwitch(randomizer(qInit(game))[1], game);
-        userInput = game;
+        if (document.querySelector('#user_input').value.length == 0){
+            alert('Please input the name of a video game.');
+        } else{
+            let game = await giantBombInit();
+            answerSwitch(randomizer(qInit(game))[1], game);
+            userInput = game;
+        }
     })
 
     clickListener('.trivia_answer_choice', (e) => {
