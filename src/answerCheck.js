@@ -5,11 +5,5 @@ export function answerCheck(selection, data){
     if (data.characters != null) { correctAns.push(...data.characters) };
     if (data.platforms != null) { correctAns.push(...data.platforms) };
     correctAns = correctAns.map(el => el.name);
-    //console.log(selection, correctAns)
-    //console.log(correctAns.includes(selection));
-    if(correctAns.includes(selection) == true){
-        alert(`Correct!`);
-    } else{
-        alert(`Sorry, but that's not the correct answer`);
-    }
+    return correctAns.includes(selection);
 }
