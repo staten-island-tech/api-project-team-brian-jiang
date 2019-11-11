@@ -1,3 +1,5 @@
 export function clickListener(el, run){
-    document.querySelector(el).addEventListener('click', run);
+    document.querySelectorAll(el).forEach(el => {
+       el.addEventListener('click', run); 
+    });
 }
