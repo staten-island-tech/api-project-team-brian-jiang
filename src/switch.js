@@ -1,4 +1,5 @@
 import {answerGenerator} from './answerGenerator';
+import { answerCheck } from './answerCheck';
 
 export function answerSwitch(q, data){
     let display = document.querySelector('.trivia_question');
