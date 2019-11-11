@@ -17,7 +17,7 @@ clickListener('#submit', async (e) => {
 })
 
 clickListener('.trivia_answer_choice', (e) => {
-    answerSwitch(randomizer(qList)[1], userInput);
+    answerSwitch(randomizer(qInit(userInput))[1], userInput);
     if (answerCheck(e.target.innerHTML, userInput) == true){
         alert('Correct.');
         score = score + 1;
