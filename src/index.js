@@ -4,8 +4,10 @@ import {qInit} from './questions';
 import {randomizer} from './rand';
 import {answerSwitch} from './switch';
 import {answerCheck} from './answerCheck';
+import {animInit} from './anim';
 
 function triviaInit(){
+    animInit();
     giantBombInit();
     let userInput;
     let score = 0;
