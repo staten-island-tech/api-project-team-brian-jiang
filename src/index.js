@@ -1,13 +1,13 @@
-import {giantBombInit} from './fetch'; //API call; Status: Complete
-import {clickListener} from './clickListener'; //Check for User input; Status Complete
-import {qInit} from './questions'; //Question Template; Status: Complete
-import {randomizer} from './rand'; //Question Randomizer; Status: Complete
-import {answerSwitch} from './switch'; //Answer Generation; Status: Complete
+import {giantBombInit} from './fetch';
+import {clickListener} from './clickListener';
+import {qInit} from './questions';
+import {randomizer} from './rand';
+import {answerSwitch} from './switch';
 import { answerCheck } from './answerCheck';
 
 function triviaInit(){
     giantBombInit();
-    let userInput; //remove later
+    let userInput;
     let score = 0;
     let highscore = 0;
 
