@@ -3,7 +3,7 @@ import {clickListener} from './clickListener';
 import {qInit} from './questions';
 import {randomizer} from './rand';
 import {answerSwitch} from './switch';
-import { answerCheck } from './answerCheck';
+import {answerCheck} from './answerCheck';
 
 function triviaInit(){
     giantBombInit();
