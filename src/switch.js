@@ -21,9 +21,6 @@ export function answerSwitch(q, data){
         case 'object':
             answerGenerator('object', 6395 ,data.objects);
             break;
-        case 'release':
-            answerGenerator('release', 70573 ,data.releases);
-            break;
         default:
             console.log('Defaulting, check inputs.');
     }
