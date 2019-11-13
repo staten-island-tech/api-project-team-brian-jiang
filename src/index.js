@@ -4,7 +4,7 @@ import {qInit} from './questions';
 import {randomizer} from './rand';
 import {answerSwitch} from './switch';
 import {answerCheck} from './answerCheck';
-import {animInit} from './anim';
+import {animInit, ansSelect, typewriterInit} from './anim';
 
 function triviaInit(){
     animInit();
@@ -24,19 +24,27 @@ function triviaInit(){
     })
 
     clickListener('.trivia_answer_choice', (e) => {
-        answerSwitch(randomizer(qInit(userInput))[1], userInput);
+        //answerSwitch(randomizer(qInit(userInput))[1], userInput);
         if (answerCheck(e.target.innerHTML, userInput) == true){
-            alert('Correct.');
+            ansSelect(e.target, 'green');
             score = score + 1;
+            document.querySelector('.trivia_scoreboard').innerHTML = score;
+            answerSwitch(randomizer(qInit(userInput))[1], userInput);
         } else{
-            alert('Incorrect');
+            ansSelect(e.target, 'red');
             if (score > highscore){
-                alert(`New High Score: ${score}`);
-                highscore = score;
+                document.querySelector('.trivia_question').innerHTML = `Game Over. New high score: ${score}!`;
+                typewriterInit(document.querySelector('.trivia_question'));
+                highscore = score
             }
             score = 0;
+            document.querySelector('.trivia_scoreboard').innerHTML = score;
+            setTimeout(() => {
+                answerSwitch(randomizer(qInit(userInput))[1], userInput)
+            }, 3000);
         }
-        document.querySelector('.trivia_scoreboard').innerHTML = score;
+        /* document.querySelector('.trivia_scoreboard').innerHTML = score;
+        answerSwitch(randomizer(qInit(userInput))[1], userInput); */
     });
     }
 triviaInit();

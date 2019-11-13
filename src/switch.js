@@ -1,12 +1,11 @@
 import {answerGenerator} from './answerGenerator';
-import { answerCheck } from './answerCheck';
-import { typewriterQ } from './anim';
+import { typewriterInit } from './anim';
 
 export function answerSwitch(q, data){
     let display = document.querySelector('.trivia_question');
-    let question = q.text.replace('%game%', data.name)
-    display.innerHTML = question + '?';
-    typewriterQ();
+    let question = q.text.replace('%game%', data.name);
+    display.innerHTML = question;
+    typewriterInit(display);
     switch(q.type){
         case 'studio':
             answerGenerator('company', 18789, data.developers);

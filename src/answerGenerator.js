@@ -1,5 +1,5 @@
 import { randomizer } from './rand';
-import { typewriterA } from './anim';
+import { typewriterInit } from './anim';
 
 export async function answerGenerator(qType, maxCount, data){
     async function generator(){
@@ -20,7 +20,7 @@ export async function answerGenerator(qType, maxCount, data){
     aArray = randomizer(aArray);
     Array.from(document.querySelectorAll('.trivia_answer_choice')).map(function(el, i){
         el.innerHTML = aArray[i];
-        typewriterA(el);
+        typewriterInit(el);
         
     });
 }
