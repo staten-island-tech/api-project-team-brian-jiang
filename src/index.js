@@ -43,7 +43,7 @@ function triviaInit(){
             document.querySelector('.trivia_scoreboard').innerHTML = score;
             setTimeout(() => {
                 answerSwitch(randomizer(qInit(userInput))[1], userInput)
-            }, 3000);
+            }, 3500);
         }
         /* document.querySelector('.trivia_scoreboard').innerHTML = score;
         answerSwitch(randomizer(qInit(userInput))[1], userInput); */

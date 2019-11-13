@@ -11,6 +11,11 @@ body{
     align-items: center;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .container{
     width: 80vw;
     background-color:rgba(255,255,255, .7);
@@ -39,6 +44,12 @@ body{
     border-radius: 2rem;
 }
 
+@media only screen and (max-width: 640px){
+    .trivia_answer_choice{
+        font-size: .5rem;
+    }
+}
+
 .header{
     background-color: rgba(255,255,255,.7);
     display: flex;
@@ -50,6 +61,30 @@ body{
     height: 15vh;
     font-size: 4rem;
     
+}
+
+@media only screen and (max-width: 1280px){
+    .header{
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 960px){
+    .header{
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .header{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .header{
+        font-size: 1rem;
+    }
 }
 
 .form{
@@ -90,6 +125,20 @@ body{
     margin-left: .25vw;
 }
 
+@media only screen and (max-width: 640px){
+    .form{
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+    }
+    #user_input{
+        width: 55vw;
+    }
+    #submit{
+        width: 25vw;
+    }
+}
+
 .trivia_question{
     color: black;
     background-color: white;
@@ -100,4 +149,9 @@ body{
     border-width: .25rem;
     border-color: black;
     padding: .25rem;
+}
+@media only screen and (max-width: 640px){
+    .trivia_question{
+        font-size: .75rem;
+    }
 }
