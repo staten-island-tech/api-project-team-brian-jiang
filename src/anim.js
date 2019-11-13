@@ -13,7 +13,7 @@ export function animInit() {
     });
 }
 
-export function typewriterInit(el) {
+export function typewriterInit(el) { //from
     function setupTypewriter(t) {
         var HTML = t.innerHTML + '/';
 
