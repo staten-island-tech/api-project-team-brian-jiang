@@ -12,6 +12,7 @@ export function qInit(data){
     if(data.characters != null){QuestionList.push(new Question('Which of these is a character from %game%?', 'character'))};
     if(data.locations != null){QuestionList.push(new Question('Where does %game% take place?', 'setting'))};
     if(data.objects != null){QuestionList.push(new Question('Which of these items is from %game%?', 'object'))}
+    if(data.releases != null){QuestionList.push(new Question('When did %game% first get released?', 'release'))}
 
     return QuestionList;
 };
