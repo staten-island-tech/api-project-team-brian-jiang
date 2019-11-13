@@ -19,8 +19,8 @@ export async function answerGenerator(qType, maxCount, data){
     let aArray = [a1, a2, a3, a4];
     aArray = randomizer(aArray);
     Array.from(document.querySelectorAll('.trivia_answer_choice')).map(function(el, i){
-        el.innerHTML = aArray[i];
-        typewriterInit(el);
+        //el.innerHTML = aArray[i];
+        typewriterInit(el, aArray[i]);
         
     });
 }

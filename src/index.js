@@ -7,6 +7,7 @@ import {answerCheck} from './answerCheck';
 import {animInit, ansSelect, typewriterInit} from './anim';
 
 function triviaInit(){
+    typewriterInit(document.querySelector('.header'), 'Videogame Trivia')
     console.log('Created by William Anderson, Bryan Boyd, and Brian Jiang.')
     animInit();
     giantBombInit();
@@ -34,8 +35,8 @@ function triviaInit(){
         } else{
             ansSelect(e.target, 'red');
             if (score > highscore){
-                document.querySelector('.trivia_question').innerHTML = `Game Over. New high score: ${score}!`;
-                typewriterInit(document.querySelector('.trivia_question'));
+                //document.querySelector('.trivia_question').innerHTML = `Game Over. New high score: ${score}!`;
+                typewriterInit(document.querySelector('.trivia_question'), `Game Over. New high score: ${score}!`);
                 highscore = score
             }
             score = 0;

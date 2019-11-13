@@ -4,8 +4,7 @@ import { typewriterInit } from './anim';
 export function answerSwitch(q, data){
     let display = document.querySelector('.trivia_question');
     let question = q.text.replace('%game%', data.name);
-    display.innerHTML = question;
-    typewriterInit(display);
+    typewriterInit(display, question);
     switch(q.type){
         case 'studio':
             answerGenerator('company', 18789, data.developers);
