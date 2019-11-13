@@ -15,7 +15,7 @@ export function animInit() {
 
 export function typewriterInit(el, txt) {
     let i = 0;
-    let speed = 100;
+    let speed = 10;
     el.innerHTML = '';
     function typeWriter(){
     if (i < txt.length) {
