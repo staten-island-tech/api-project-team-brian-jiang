@@ -4,7 +4,7 @@ export async function giantBombInit() {
     let result = await data.json();
     let game = await fetch(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/game/${result.results[0].id}/?api_key=ba31dd109b521b66607178ada5c6b8f4fc13ca0b&field_list=name,id,characters,developers,locations,platforms,objects&format=json`);
     game = await game.json();
-    console.log(game.results);
+    //console.log(game.results);
     return game = game.results
   } catch (err) {
     console.log(err);

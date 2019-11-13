@@ -7,6 +7,7 @@ import {answerCheck} from './answerCheck';
 import {animInit, ansSelect, typewriterInit} from './anim';
 
 function triviaInit(){
+    console.log('Created by William Anderson, Bryan Boyd, and Brian Jiang.')
     animInit();
     giantBombInit();
     let userInput;
