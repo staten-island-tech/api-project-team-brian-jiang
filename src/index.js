@@ -1,33 +1,51 @@
-import {giantBombInit} from './fetch'; //API call; Status: Complete
-import {clickListener} from './clickListener'; //Check for User input; Status Complete
-import {qInit} from './questions'; //Question Template; Status: Complete
-import {randomizer} from './rand'; //Question Randomizer; Status: Complete
-import {answerSwitch} from './switch'; //Answer Generation; Status: Complete
-import { answerCheck } from './answerCheck';
+import {giantBombInit} from './fetch';
+import {clickListener} from './clickListener';
+import {qInit} from './questions';
+import {randomizer} from './rand';
+import {answerSwitch} from './switch';
+import {answerCheck} from './answerCheck';
+import {animInit, ansSelect, typewriterInit} from './anim';
 
-giantBombInit();
-let userInput; //remove later
-let score = 0;
-let highscore = 0;
+function triviaInit(){
+    console.log('Created by William Anderson, Bryan Boyd, and Brian Jiang.')
+    animInit();
+    giantBombInit();
+    let userInput;
+    let score = 0;
+    let highscore = 0;
 
-clickListener('#submit', async (e) => {
-    let game = await giantBombInit();
-    answerSwitch(randomizer(qInit(game))[1], game);
-    userInput = game;
-})
-
-clickListener('.trivia_answer_choice', (e) => {
-    answerSwitch(randomizer(qInit(userInput))[1], userInput);
-    if (answerCheck(e.target.innerHTML, userInput) == true){
-        alert('Correct.');
-        score = score + 1;
-    } else{
-        alert('Incorrect');
-        if (score > highscore){
-            alert(`New High Score: ${score}`);
-            highscore = score;
+    clickListener('#submit', async (e) => {
+        if (document.querySelector('#user_input').value.length == 0){
+            alert('Please input the name of a video game.');
+        } else{
+            let game = await giantBombInit();
+            answerSwitch(randomizer(qInit(game))[1], game);
+            userInput = game;
         }
-        score = 0;
+    })
+
+    clickListener('.trivia_answer_choice', (e) => {
+        //answerSwitch(randomizer(qInit(userInput))[1], userInput);
+        if (answerCheck(e.target.innerHTML, userInput) == true){
+            ansSelect(e.target, 'green');
+            score = score + 1;
+            document.querySelector('.trivia_scoreboard').innerHTML = score;
+            answerSwitch(randomizer(qInit(userInput))[1], userInput);
+        } else{
+            ansSelect(e.target, 'red');
+            if (score > highscore){
+                document.querySelector('.trivia_question').innerHTML = `Game Over. New high score: ${score}!`;
+                typewriterInit(document.querySelector('.trivia_question'));
+                highscore = score
+            }
+            score = 0;
+            document.querySelector('.trivia_scoreboard').innerHTML = score;
+            setTimeout(() => {
+                answerSwitch(randomizer(qInit(userInput))[1], userInput)
+            }, 3000);
+        }
+        /* document.querySelector('.trivia_scoreboard').innerHTML = score;
+        answerSwitch(randomizer(qInit(userInput))[1], userInput); */
+    });
     }
-    document.querySelector('.trivia_scoreboard').innerHTML = score;
-});
+triviaInit();
